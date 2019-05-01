@@ -15,7 +15,6 @@ def eval_tgt(encoder, classifier, data_loader):
     # init loss and accuracy
     loss = 0
     acc = 0
-    acc_per = torch.tensor(0, dtype=torch.float32)
 
     # set loss function
     criterion = nn.CrossEntropyLoss()
@@ -32,6 +31,6 @@ def eval_tgt(encoder, classifier, data_loader):
         acc += pred_cls.eq(labels.data).cpu().sum()
 
     loss /= len(data_loader)
-    acc_per = acc / len(data_loader.dataset)
+    acc_per = float(acc) / len(data_loader.dataset)
 
     print_log("Avg Loss = {}, Avg Accuracy = {:2%}".format(loss, acc_per))
