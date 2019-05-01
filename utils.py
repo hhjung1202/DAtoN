@@ -92,3 +92,11 @@ def save_model(net, filename):
                os.path.join(params.model_root, filename))
     print("save pretrained model to: {}".format(os.path.join(params.model_root,
                                                              filename)))
+
+
+def print_log(text, filename="log.txt"):
+    if not os.path.exists(params.model_root):
+        os.makedirs(params.model_root)
+    model_filename = os.path.join(params.model_root, filename)
+    with open(model_filename, "a") as myfile:
+        myfile.write(text + "\n")

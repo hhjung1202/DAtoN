@@ -7,7 +7,7 @@ import torch.optim as optim
 from torch import nn
 
 import params
-from utils import make_variable
+from utils import make_variable, print_log
 
 
 def train_tgt(src_encoder, tgt_encoder, critic,
@@ -101,7 +101,7 @@ def train_tgt(src_encoder, tgt_encoder, critic,
             # 2.3 print step info #
             #######################
             if ((step + 1) % params.log_step == 0):
-                print("Epoch [{}/{}] Step [{}/{}]:"
+                print_log("Epoch [{}/{}] Step [{}/{}]:"
                       "d_loss={:.5f} g_loss={:.5f} acc={:.5f}"
                       .format(epoch + 1,
                               params.num_epochs,

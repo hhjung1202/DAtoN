@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 import params
-from utils import make_variable, save_model
+from utils import make_variable, save_model, print_log
 
 
 def train_src(encoder, classifier, data_loader):
@@ -47,7 +47,7 @@ def train_src(encoder, classifier, data_loader):
 
             # print step info
             if ((step + 1) % params.log_step_pre == 0):
-                print("Epoch [{}/{}] Step [{}/{}]: loss={}"
+                print_log("Epoch [{}/{}] Step [{}/{}]: loss={}"
                       .format(epoch + 1,
                               params.num_epochs_pre,
                               step + 1,
@@ -98,4 +98,4 @@ def eval_src(encoder, classifier, data_loader):
     loss /= len(data_loader)
     acc /= len(data_loader.dataset)
 
-    print("Avg Loss = {}, Avg Accuracy = {:2%}".format(loss, acc))
+    print_log("Avg Loss = {}, Avg Accuracy = {:2%}".format(loss, acc))

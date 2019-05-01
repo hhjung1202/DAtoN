@@ -3,7 +3,7 @@
 import torch
 import torch.nn as nn
 
-from utils import make_variable
+from utils import make_variable, print_log
 
 
 def eval_tgt(encoder, classifier, data_loader):
@@ -33,4 +33,4 @@ def eval_tgt(encoder, classifier, data_loader):
     loss /= len(data_loader)
     acc /= len(data_loader.dataset)
 
-    print("Avg Loss = {}, Avg Accuracy = {:2%}".format(loss, acc))
+    print_log("Avg Loss = {}, Avg Accuracy = {:2%}".format(loss, acc))
