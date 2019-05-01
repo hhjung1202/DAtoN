@@ -26,6 +26,6 @@ def get_mnist(train):
         batch_size=params.batch_size,
         shuffle=True)
 
-    print_log("LOADING MNIST")
+    print("LOADING MNIST")
 
     return mnist_data_loader
