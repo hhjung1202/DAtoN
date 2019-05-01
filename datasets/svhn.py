@@ -10,12 +10,12 @@ def get_svhn(train):
     print("SVHN Data Loading ...")
 
     train_dataset = datasets.SVHN(root='/home/hhjung/hhjung/SVHN/', split='train', 
-                                        transform=transforms.Compose([transforms.ToTensor()
+                                        transform=transforms.Compose([transforms.Scale(28), transforms.ToTensor()
                                             , transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))]),
                                         download=True)
 
     # test_dataset = datasets.SVHN(root='/home/hhjung/hhjung/SVHN/', split='test', 
-    #                                     transform=transforms.Compose([transforms.ToTensor()
+    #                                     transform=transforms.Compose([transforms.Scale(28), transforms.ToTensor()
     #                                         , transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))]),
     #                                     download=True)
 
