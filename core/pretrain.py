@@ -97,6 +97,11 @@ def eval_src(encoder, classifier, data_loader):
         pred_cls = preds.data.max(1)[1]
         acc += pred_cls.eq(labels.data).cpu().sum()
 
+    print('acc', acc)
+    print('len', len(data_loader.dataset))
+    print('per', acc/len(data_loader.dataset))
+    print('per(F)', float(acc)/len(data_loader.dataset))
+
     loss /= len(data_loader)
     acc_per = acc/len(data_loader.dataset)
 
