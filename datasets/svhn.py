@@ -14,10 +14,10 @@ def get_svhn(train):
                                             , transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))]),
                                         download=True)
 
-    test_dataset = datasets.SVHN(root='/home/hhjung/hhjung/SVHN/', split='test', 
-                                        transform=transforms.Compose([transforms.ToTensor()
-                                            , transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))]),
-                                        download=True)
+    # test_dataset = datasets.SVHN(root='/home/hhjung/hhjung/SVHN/', split='test', 
+    #                                     transform=transforms.Compose([transforms.ToTensor()
+    #                                         , transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))]),
+    #                                     download=True)
 
     train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=params.batch_size, shuffle=True)
     test_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=params.batch_size, shuffle=False)
