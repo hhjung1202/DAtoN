@@ -29,10 +29,10 @@ if __name__ == '__main__':
 
     # train source model
     print_log("=== Training classifier for source domain ===")
-    print_log(">>> Source Encoder <<<")
-    print_log(src_encoder)
-    print_log(">>> Source Classifier <<<")
-    print_log(src_classifier)
+    print(">>> Source Encoder <<<")
+    print(src_encoder)
+    print(">>> Source Classifier <<<")
+    print(src_classifier)
 
     if not (src_encoder.restored and src_classifier.restored and
             params.src_model_trained):
@@ -45,10 +45,10 @@ if __name__ == '__main__':
 
     # train target encoder by GAN
     print_log("=== Training encoder for target domain ===")
-    print_log(">>> Target Encoder <<<")
-    print_log(tgt_encoder)
-    print_log(">>> Critic <<<")
-    print_log(critic)
+    print(">>> Target Encoder <<<")
+    print(tgt_encoder)
+    print(">>> Critic <<<")
+    print(critic)
 
     # init weights of target encoder with those of source encoder
     if not tgt_encoder.restored:
