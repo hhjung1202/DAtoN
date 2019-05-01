@@ -9,7 +9,7 @@ from utils import get_data_loader, init_model, init_random_seed, print_log
 if __name__ == '__main__':
     # init random seed
     
-    os.environ["CUDA_VISIBLE_DEVICES"] = params.num_gpu
+    os.environ["CUDA_VISIBLE_DEVICES"] = str(params.num_gpu)
 
     init_random_seed(params.manual_seed)
 
