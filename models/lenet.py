@@ -17,7 +17,7 @@ class LeNetEncoder(nn.Module):
             # 1st conv layer
             # input [1 x 28 x 28]
             # output [20 x 12 x 12]
-            nn.Conv2d(1, 20, kernel_size=5),
+            nn.Conv2d(3, 20, kernel_size=5),
             nn.MaxPool2d(kernel_size=2),
             nn.ReLU(),
             # 2nd conv layer
@@ -32,6 +32,8 @@ class LeNetEncoder(nn.Module):
 
     def forward(self, input):
         """Forward the LeNet."""
+        if input.size(1) == 1:
+            input = torch.cat([input, input, input], 1)
         conv_out = self.encoder(input)
         feat = self.fc1(conv_out.view(-1, 50 * 4 * 4))
         return feat

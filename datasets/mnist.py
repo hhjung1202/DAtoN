@@ -16,7 +16,7 @@ def get_mnist(train):
                                           std=params.dataset_std)])
 
     # dataset and data loader
-    mnist_dataset = datasets.MNIST(root=params.data_root,
+    mnist_dataset = datasets.MNIST(root='/home/hhjung/hhjung/MNIST/',
                                    train=train,
                                    transform=pre_process,
                                    download=True)

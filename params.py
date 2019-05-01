@@ -11,21 +11,21 @@ image_size = 64
 
 # params for source dataset
 src_dataset = "MNIST"
-src_encoder_restore = "snapshots/ADDA-source-encoder-final.pt"
-src_classifier_restore = "snapshots/ADDA-source-classifier-final.pt"
+src_encoder_restore = "/home/hhjung/hhjung/ADDA/ADDA-source-encoder-final.pt"
+src_classifier_restore = "/home/hhjung/hhjung/ADDA/ADDA-source-classifier-final.pt"
 src_model_trained = True
 
 # params for target dataset
-tgt_dataset = "USPS"
-tgt_encoder_restore = "snapshots/ADDA-target-encoder-final.pt"
+tgt_dataset = "SVHN"
+tgt_encoder_restore = "/home/hhjung/hhjung/ADDA/ADDA-target-encoder-final.pt"
 tgt_model_trained = True
 
 # params for setting up models
-model_root = "snapshots"
+model_root = "/home/hhjung/hhjung/ADDA/"
 d_input_dims = 500
 d_hidden_dims = 500
 d_output_dims = 2
-d_model_restore = "snapshots/ADDA-critic-final.pt"
+d_model_restore = "/home/hhjung/hhjung/ADDA/ADDA-critic-final.pt"
 
 # params for training network
 num_gpu = 1
