@@ -36,6 +36,7 @@ class LeNetEncoder(nn.Module):
         """Forward the LeNet."""
         if input.size(1) == 3:
             input = self.rgb2gray[0] * input[:,0,:,:] + self.rgb2gray[1] * input[:,1,:,:] + self.rgb2gray[2] * input[:,2,:,:]
+            input.unsqueeze_(1)
         conv_out = self.encoder(input)
         feat = self.fc1(conv_out.view(-1, 50 * 4 * 4))
         return feat
