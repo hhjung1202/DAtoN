@@ -65,7 +65,17 @@ if __name__ == '__main__':
 
     # eval target encoder on test set of target dataset
     print_log("=== Evaluating classifier for encoded target domain ===")
-    print_log(">>> source only <<<")
+    print_log(">>> source only final <<<")
     eval_tgt(src_encoder, src_classifier, tgt_data_loader_eval)
-    print_log(">>> domain adaption <<<")
+    print_log(">>> domain adaption final <<<")
     eval_tgt(tgt_encoder, src_classifier, tgt_data_loader_eval)
+
+    for i in range(100, 2000, 100):
+        file_name = "/home/hhjung/hhjung/ADDA/ADDA-target-encoder-{}.pt".format(i)
+        tgt_encoder = init_model(net=LeNetEncoder(),
+            restore=file_name)
+        print_log(">>> source only {} <<<".format(i))
+        eval_tgt(src_encoder, src_classifier, tgt_data_loader_eval)
+        print_log(">>> domain adaption {} <<<".format(i))
+        eval_tgt(tgt_encoder, src_classifier, tgt_data_loader_eval)
+
