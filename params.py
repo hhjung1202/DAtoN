@@ -2,6 +2,7 @@
 
 # params for dataset and data loader
 data_root = "data"
+model_root = "/home/hhjung/hhjung/ADDA_2/"
 dataset_mean_value = 0.5
 dataset_std_value = 0.5
 dataset_mean = (dataset_mean_value, dataset_mean_value, dataset_mean_value)
@@ -21,7 +22,6 @@ tgt_encoder_restore = model_root + "ADDA-target-encoder-final.pt"
 tgt_model_trained = True
 
 # params for setting up models
-model_root = "/home/hhjung/hhjung/ADDA_2/"
 d_input_dims = 500
 d_hidden_dims = 500
 d_output_dims = 2
