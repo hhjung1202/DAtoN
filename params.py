@@ -2,7 +2,7 @@
 
 # params for dataset and data loader
 data_root = "data"
-model_root = "/home/hhjung/hhjung/ADDA_2/"
+model_root = "/home/hhjung/hhjung/ADDA_3/"
 dataset_mean_value = 0.5
 dataset_std_value = 0.5
 dataset_mean = (dataset_mean_value, dataset_mean_value, dataset_mean_value)
@@ -11,13 +11,13 @@ batch_size = 50
 image_size = 64
 
 # params for source dataset
-src_dataset = "MNIST"
+src_dataset = "SVHN"
 src_encoder_restore = model_root + "ADDA-source-encoder-final.pt"
 src_classifier_restore = model_root + "ADDA-source-classifier-final.pt"
 src_model_trained = True
 
 # params for target dataset
-tgt_dataset = "SVHN"
+tgt_dataset = "MNIST"
 tgt_encoder_restore = model_root + "ADDA-target-encoder-final.pt"
 tgt_model_trained = True
 
