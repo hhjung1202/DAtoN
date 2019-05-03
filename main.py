@@ -71,7 +71,7 @@ if __name__ == '__main__':
     eval_tgt(tgt_encoder, src_classifier, tgt_data_loader_eval)
 
     for i in range(100, 2000, 100):
-        file_name = "/home/hhjung/hhjung/ADDA/ADDA-target-encoder-{}.pt".format(i)
+        file_name = params.model_root + "ADDA-target-encoder-{}.pt".format(i)
         tgt_encoder = init_model(net=LeNetEncoder(),
             restore=file_name)
         print_log(">>> source only {} <<<".format(i))
