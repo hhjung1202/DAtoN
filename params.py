@@ -2,7 +2,7 @@
 
 # params for dataset and data loader
 data_root = "data"
-model_root = "/home/hhjung/hhjung/ADDA_3/"
+model_root = "/home/hhjung/hhjung/ADDA_4/"
 dataset_mean_value = 0.5
 dataset_std_value = 0.5
 dataset_mean = (dataset_mean_value, dataset_mean_value, dataset_mean_value)
@@ -28,7 +28,7 @@ d_output_dims = 2
 d_model_restore = model_root + "ADDA-critic-final.pt"
 
 # params for training network
-num_gpu = 0
+num_gpu = 1
 num_epochs_pre = 100
 log_step_pre = 20
 eval_step_pre = 20
